@@ -1,0 +1,46 @@
+{
+  "name": "online",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./src/server/bin/www",
+    "start:local": "DEBUG=app:* nodemon ./src/server/bin/www",
+    "serve": "react-scripts start",
+    "watch": "cra-build-watch",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "hbs": "~4.0.1",
+    "http-errors": "~1.6.2",
+    "morgan": "~1.9.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.6.1",
+    "react-dom": "^16.6.1",
+    "react-redux": "^5.1.0",
+    "react-scripts": "2.1.1",
+    "redux": "^4.0.1",
+    "redux-api-middleware": "^3.0.0",
+    "redux-thunk": "^2.3.0",
+    "socket.io": "^2.1.1"
+  },
+  "devDependencies": {
+    "cra-build-watch": "^1.2.0",
+    "nodemon": "^1.18.6",
+    "redux-devtools-extension": "^2.13.5"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
