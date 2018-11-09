@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import logo from '../../assets/images/logo.svg';
-import './App.css';
+import './App.scss';
 import { CommonActions } from '../../actions';
 import services from '../../services';
 
@@ -29,25 +29,34 @@ class App extends Component {
     const { isShowPreloader } = this.props;
 
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className="container">
+        <div className="row">
+          <div className="col">
+            <img src={logo} className="App-logo" alt="logo" />
+            Header
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-md-3">
+            Sidebar
 
-        <div>Timestamp: {this.state.timestamp}</div>
-
-        {isShowPreloader ? <div>Loading...</div> : null}
+            <div>Timestamp: {this.state.timestamp}</div>
+          </div>
+          <div className="col-md-9">
+            {isShowPreloader ? <div>Loading...</div> : <div>Content</div>}
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-md-4">
+            Footer 1
+          </div>
+          <div className="col-md-4">
+            Footer 2
+          </div>
+          <div className="col-md-4">
+            Footer 3
+          </div>
+        </div>
       </div>
     );
   }
