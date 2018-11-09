@@ -5,18 +5,24 @@ import PropTypes from 'prop-types';
 import logo from '../../assets/images/logo.svg';
 import './App.css';
 import { CommonActions } from '../../actions';
+import services from '../../services';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentWillMount() {
     this.props.showPreloader();
+
+    this.setState({
+      timestamp: 0
+    });
+
+    services.socket
+      .start()
+      .then(timestamp => this.setState({timestamp}))
+      .catch(err => console.error(err));
   }
 
   componentDidMount() {
-    setTimeout(() => this.props.hidePreloader(), 5000);
+    this.props.hidePreloader();
   }
 
   render() {
@@ -38,6 +44,8 @@ class App extends Component {
             Learn React
           </a>
         </header>
+
+        <div>Timestamp: {this.state.timestamp}</div>
 
         {isShowPreloader ? <div>Loading...</div> : null}
       </div>
