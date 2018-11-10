@@ -1,3 +1,3 @@
 export default {
-  server: 'http://localhost:3000'
+  server: 'http://local.online:3000'
 };

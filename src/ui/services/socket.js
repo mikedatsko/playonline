@@ -10,6 +10,10 @@ class Socket {
       socket.on('timer', timestamp => res(timestamp));
     });
   }
+
+  getSocket() {
+    return socket;
+  }
 }
 
 export default new Socket();
